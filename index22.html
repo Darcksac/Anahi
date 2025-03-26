@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>♥ Anahi ♥</title>
+  <style>
+    body {
+      background-color: rgb(32, 28, 28);
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .body__img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 50%;
+      transition: opacity 0.5s;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+      box-shadow: 0 4px 10px rgba(255, 77, 109, 0.6);
+    }
+
+    #yes:hover {
+      background-color: #ff1a4d;
+    }
+
+    #no {
+      background-color: #444;
+      color: white;
+      position: relative;
+    }
+
+    #no:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>♥ ¿Quieres ser mi novia? ♥</h1>
+  <div class="image-container">
+    <img src="https://img.freepik.com/vector-gratis/personajes-dibujados-mano-ilustracion-dibujos-animados-amor_52683-118987.jpg" alt="Foto D My" class="body__img" id="loveImage" />
+  </div>
+  <br>
+  <button id="changeImage">🎥 Cambiar a GIF</button>
+  <div class="button-container">
+    <button id="yes">💖 ¡SÍIIII! Ya era hora 💖</button>
+    <button id="no">💔 No, lo siento 💔</button>
+  </div>
+
+  <script>
+    const buttonYes = document.getElementById('yes');
+    const buttonNo = document.getElementById('no');
+    const changeImageBtn = document.getElementById('changeImage');
+    const loveImage = document.getElementById('loveImage');
+    let isGif = false;
+
+    const Novios = () => {
+      alert('💞 ¡Ahora oficialmente somos uno solo! 💞');
+      alert('¿Ahora la boda o qué?');
+      location.href = 'https://youtu.be/am1_JLFDFMw?t=19';
+    };
+
+    const moveButtonNo = () => {
+      buttonNo.style.position = 'absolute';
+      buttonNo.style.top = (Math.random() * window.innerHeight) + 'px';
+      buttonNo.style.left = (Math.random() * window.innerWidth) + 'px';
+    };
+
+    const toggleImage = () => {
+      if (!isGif) {
+        loveImage.src = 'https://media.tenor.com/A7d-ursSFK8AAAAM/bubu-dudu-kisses.gif'; // Cambia a un gif romántico
+        changeImageBtn.textContent = 'Volver a imagen';
+      } else {
+        loveImage.src = 'https://img.freepik.com/vector-gratis/personajes-dibujados-mano-ilustracion-dibujos-animados-amor_52683-118987.jpg'; // Imagen original
+        changeImageBtn.textContent = 'Cambiar a GIF';
+      }
+      isGif = !isGif;
+    };
+
+    buttonYes.addEventListener('click', Novios);
+    buttonNo.addEventListener('mouseover', moveButtonNo);
+    changeImageBtn.addEventListener('click', toggleImage);
+  </script>
+</body>
+
+</html>
